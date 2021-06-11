@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 
 namespace webCore.Models.Repo
 {
-    interface IBookStoreRepo<TEntity>
+    public interface IBookStoreRepo<TEntity>
     {
         IList<TEntity> List();
         TEntity Find(int id);
         void Add(TEntity entity);
-        void Update(TEntity entity);
-
+        void Update(TEntity entity,int id);
+        void Delete(int id);
     }
 }
