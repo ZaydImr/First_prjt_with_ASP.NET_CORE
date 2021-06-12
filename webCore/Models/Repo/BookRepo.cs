@@ -11,13 +11,14 @@ namespace webCore.Models.Repo
         public BookRepo()
         {
             books = new List<Book>(){
-                new Book { Id=1,Title="C# Programing",Description="No description"},
-                new Book { Id=2,Title="React",Description="React description"},
-                new Book { Id=1,Title="Java",Description="No data"},
+                new Book { Id=1,Title="C# Programing",Description="No description",Author = new Author()},
+                new Book { Id=2,Title="React",Description="React description",Author = new Author()},
+                new Book { Id=3,Title="Java",Description="No data",Author = new Author()},
             };
         }
         public void Add(Book entity)
         {
+            entity.Id = books.Max(b => b.Id) + 1;
             books.Add(entity);
         }
 

@@ -32,13 +32,12 @@ namespace webCore
             }
 
             app.UseStaticFiles();
-            app.UseStaticFiles();
             app.UseRouting();
             app.UseCors();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}");
+                endpoints.MapControllerRoute("default", "{controller=author}/{action=Index}");
             });
         }
     }
